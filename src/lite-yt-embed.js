@@ -1,3 +1,4 @@
+// Original repo has a LICENSE file (Apache 2) but no copyright statement in this source file.
 /**
  * A lightweight youtube embed. Still should feel the same to the user, just MUCH faster to initialize and paint.
  *
@@ -162,5 +163,13 @@ class LiteYTEmbed extends HTMLElement {
         iframeEl.focus();
     }
 }
-// Register custom element
-customElements.define('lite-youtube', LiteYTEmbed);
+
+// Modifications:
+// Copyright 2023 Kraig Hanson
+// Licensed under the Apache License, Version 2.0
+// Modification is the if statement to prevent defining the custom element if it already exists
+
+if(!customElements.get('lite-youtube')) {
+    // Register custom element
+    customElements.define('lite-youtube', LiteYTEmbed);
+}
